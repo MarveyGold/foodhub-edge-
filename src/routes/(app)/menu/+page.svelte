@@ -1,10 +1,42 @@
 <script>
   const menu = [
     {
-      name: "Chocolate Cake",
+      name: "Cake",
+      size: 8,
+      layers: 2,
       imageUrl: "/cake.png",
       description: "Rich moist cake available in any desired flavour",
       price: 25000,
+    },
+    {
+      name: "Two tiered fondant cake",
+      imageUrl: "/premium.png",
+      description: "Premium Gold-plated cake available in any desired flavour",
+      price: 150000,
+    },
+    {
+      name: "Cake",
+      size: 8,
+      layers: 3,
+      imageUrl: "/83.png",
+      description: "Rich moist cake available in any desired flavour",
+      price: 35000,
+    },
+    {
+      name: "Cake",
+      size: 10,
+      layers: 2,
+      imageUrl: "/10-2.png",
+      description: "Rich moist cake available in any desired flavour",
+      price: 40000,
+    },
+    {
+      name: "Cake",
+      size: 10,
+      layers: 3,
+      imageUrl: "/10-3.png",
+      description: "Rich moist cake available in any desired flavour",
+      price: 50000,
     },
     {
       name: "Meatpie",
@@ -20,10 +52,17 @@
         "Assorted platter of puff-puff, samosas, spring rolls, and gizdodo",
       price: 1500,
     },
+    {
+      name: "Military Cap Fundant Cake",
+      imageUrl: "/military.png",
+      description:
+        "Rich moist military themed cake available in any desired flavour",
+      price: 80000,
+    },
   ];
 </script>
 
-<div class="p-2 pb-2.5">
+<div class="p-2 pb-25">
   <div class="grid grid-cols-2 gap-1 md:grid-cols-12">
     <!-- Main Feature -->
     {#each menu as item}
@@ -45,6 +84,16 @@
           >
             {item.name}
           </h3>
+          <h4
+            class="mb-2 text-body-md font-bold text-white"
+            style="font-family: 'Plus Jakarta Sans', sans-serif;"
+          >
+            {#if item.size}
+              <!-- content here -->
+              {item.size} Inches, {item.layers} Layers
+            {/if}
+          </h4>
+
           <p class="mb-4 text-xs leading-relaxed text-stone-500">
             {item.description}
           </p>
