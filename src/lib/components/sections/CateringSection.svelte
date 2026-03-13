@@ -1,11 +1,6 @@
 <!-- src/lib/components/sections/DineInSection.svelte -->
 <section id="contact" class="bg-stone-900/30 py-24">
   <div class="mx-auto max-w-5xl px-6 text-center">
-    <h2
-      class="mb-8 text-3xl font-bold text-white"
-      style="font-family: 'Plus Jakarta Sans', sans-serif;"
-    ></h2>
-
     <div class="mb-12 grid gap-8 md:grid-cols-3">
       <div
         class="rounded-3xl border border-white/5 bg-stone-950/50 p-8 transition-all hover:bg-[#C41E3A]/5"
