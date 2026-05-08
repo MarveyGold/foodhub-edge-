@@ -6,7 +6,7 @@
           class="mb-4 text-3xl font-bold text-white"
           style="font-family: 'Plus Jakarta Sans', sans-serif;"
         >
-          Explore Our Kitchen
+          Explore Our Menu
         </h2>
         <p
           class="text-base leading-relaxed text-stone-400"
@@ -18,15 +18,15 @@
       <div class="hidden gap-2 md:flex">
         <span
           class="cursor-pointer rounded-full border border-white/5 bg-stone-900 px-4 py-2 text-sm font-semibold tracking-wide text-amber-500 hover:bg-stone-800"
-          >Spicy</span
-        >
-        <span
-          class="cursor-pointer rounded-full border border-white/5 bg-stone-900 px-4 py-2 text-sm font-semibold tracking-wide text-stone-400 hover:bg-stone-800"
           >Popular</span
         >
         <span
           class="cursor-pointer rounded-full border border-white/5 bg-stone-900 px-4 py-2 text-sm font-semibold tracking-wide text-stone-400 hover:bg-stone-800"
-          >Traditional</span
+          >Cakes</span
+        >
+        <span
+          class="cursor-pointer rounded-full border border-white/5 bg-stone-900 px-4 py-2 text-sm font-semibold tracking-wide text-stone-400 hover:bg-stone-800"
+          >Snacks</span
         >
       </div>
     </div>
@@ -39,9 +39,9 @@
         <div class="grid md:grid-cols-2">
           <div class="relative h-64 overflow-hidden md:h-auto">
             <img
-              alt="Smoky Jollof"
+              alt="Cake"
               class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-              src="/rice.png"
+              src="/cake.png"
             />
           </div>
           <div class="flex flex-col justify-center p-8">
@@ -54,15 +54,13 @@
               class="mb-4 text-3xl font-bold text-white"
               style="font-family: 'Plus Jakarta Sans', sans-serif;"
             >
-              Smoky Jollof Rice
+              Chocolate Cake
             </h3>
             <p class="mb-6 text-base leading-relaxed text-stone-400">
-              Infused with firewood smoke, rich tomato base, and a blend of
-              heritage spices. Served with moin-moin and fried plantain.
+              Rich moist cake available in any desired flavour
             </p>
             <div class="flex items-center justify-between">
-              <span class="text-2xl font-bold text-amber-500">₦300 / spoon</span
-              >
+              <span class="text-2xl font-bold text-amber-500">₦25,000</span>
               <button
                 class="transform rounded-full bg-[#C41E3A] p-3 text-white transition-transform active:scale-90"
               >
@@ -81,7 +79,7 @@
           <img
             alt="Egusi Soup"
             class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-            src="/soup.png"
+            src="/meatpie.png"
           />
         </div>
         <div class="p-6">
@@ -89,13 +87,13 @@
             class="mb-2 text-2xl font-bold text-white"
             style="font-family: 'Plus Jakarta Sans', sans-serif;"
           >
-            Heritage Egusi
+            Meatpie
           </h3>
           <p class="mb-4 text-xs leading-relaxed text-stone-500">
-            Traditional melon seed soup with spinach and assorted proteins.
+            Flaky crust filled with seasoned minced meat, potatoes and carrots
           </p>
           <div class="flex items-center justify-between">
-            <span class="text-lg font-bold text-amber-500">₦5,200</span>
+            <span class="text-lg font-bold text-amber-500">₦400</span>
             <button
               class="material-symbols-outlined text-stone-400 hover:text-[#C41E3A]"
               >favorite</button
@@ -178,10 +176,10 @@
           class="mb-2 text-2xl font-bold text-white"
           style="font-family: 'Plus Jakarta Sans', sans-serif;"
         >
-          More To Taste
+          More To Savor
         </h3>
         <p class="mb-6 text-base leading-relaxed text-stone-400">
-          Discover our full range of traditional soups and rice dishes.
+          Discover our full range of tasty cakes and treats.
         </p>
         <button
           class="w-full rounded-xl border border-white/10 bg-white/5 py-3 text-white transition-all hover:bg-white/10"

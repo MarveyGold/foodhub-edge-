@@ -1,46 +1,72 @@
-<!-- src/lib/components/Navbar.svelte -->
+<script>
+  import { onMount } from "svelte";
+
+  let active = $state("home");
+  let menuOpen = $state(false);
+
+  const sections = ["home", "menu", "story", "contact"];
+
+  function scrollToSection(id) {
+    active = id;
+    menuOpen = false;
+
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+
+  // Scroll spy
+  onMount(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            active = entry.target.id;
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+      },
+    );
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  });
+</script>
+
 <nav
-	class="fixed top-0 z-50 w-full border-b border-white/10 bg-stone-950/90 shadow-xl backdrop-blur-md"
+  class="fixed top-0 z-50 w-full border-b border-white/10 bg-stone-950/90 shadow-xl backdrop-blur-md"
 >
-	<div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-		<div class="text-2xl font-black tracking-tighter text-[#C41E3A] italic">Fejiro Food Hub</div>
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+    <div class="text-2xl font-black tracking-tighter text-[#C41E3A] italic">
+      Hadeva Bakes
+    </div>
 
-		<div class="hidden items-center space-x-8 md:flex">
-			<a
-				href="#menu"
-				class="font-jakarta border-b-2 border-amber-500 pb-1 text-sm font-bold tracking-wide text-amber-500"
-				>Menu</a
-			>
-			<a
-				href="#dine-in"
-				class="font-jakarta text-sm tracking-wide text-white/80 transition-colors hover:text-white"
-				>Dine-in</a
-			>
-			<a
-				href="#story"
-				class="font-jakarta text-sm tracking-wide text-white/80 transition-colors hover:text-white"
-				>Our Story</a
-			>
-			<a
-				href="#contact"
-				class="font-jakarta text-sm tracking-wide text-white/80 transition-colors hover:text-white"
-				>Contact</a
-			>
-		</div>
+    <div class="hidden items-center space-x-8 md:flex">
+      {#each sections as section}
+        <button
+          onclick={() => scrollToSection(section)}
+          class={active == section
+            ? " border-amber-500  text-amber-500 pb-1 text-sm font-bold tracking-wide font-jakarta border-b-2 "
+            : "pb-1 text-sm font-bold font-jakarta border-b-2 tracking-wide"}
+          >{section.charAt(0).toUpperCase() + section.slice(1)}</button
+        >
+      {/each}
+    </div>
 
-		<div class="flex items-center space-x-6">
-			<button
-				class="material-symbols-outlined text-white transition-all duration-300 hover:text-amber-400"
-			>
-				shopping_cart
-			</button>
-			<button
-				class="transform rounded-full bg-[#C41E3A] px-6 py-2 text-sm font-semibold tracking-wide text-white shadow-lg shadow-[#C41E3A]/20 transition-transform duration-150 active:scale-95"
-			>
-				Order Now
-			</button>
-		</div>
-	</div>
+    <div class="flex items-center space-x-6">
+      <button
+        class="material-symbols-outlined text-white transition-all duration-300 hover:text-amber-400"
+      >
+        shopping_cart
+      </button>
+    </div>
+  </div>
 </nav>
 
 <div class="h-20"></div>
