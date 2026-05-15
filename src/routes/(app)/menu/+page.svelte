@@ -39,11 +39,18 @@
       price: 50000,
     },
     {
-      name: "Meatpie",
+      name: "Mini Meatpie",
       imageUrl: "/meatpie.png",
       description:
         " Flaky crust filled with seasoned minced meat, potatoes and carrots",
       price: 400,
+    },
+    {
+      name: "Meatpie",
+      imageUrl: "/meatpie.png",
+      description:
+        " Flaky crust filled with seasoned minced meat, potatoes and carrots",
+      price: 1200,
     },
     {
       name: "Small Chops",
@@ -53,7 +60,7 @@
       price: 1500,
     },
     {
-      name: "Military Cap Fundant Cake",
+      name: "Military Cap Fondant Cake",
       imageUrl: "/military.png",
       description:
         "Rich moist military themed cake available in any desired flavour",
@@ -62,7 +69,7 @@
   ];
 </script>
 
-<div class="p-2 pb-25">
+<div class="p-2 py-25">
   <div class="grid grid-cols-2 gap-1 md:grid-cols-12">
     <!-- Main Feature -->
     {#each menu as item}
@@ -98,7 +105,9 @@
             {item.description}
           </p>
           <div class="flex items-center justify-between">
-            <span class="text-lg font-bold text-amber-500">₦{item.price}</span>
+            <span class="text-lg font-bold text-amber-500"
+              >₦{item.price.toLocaleString()}</span
+            >
             <button
               class="transform rounded-full bg-[#C41E3A] p-3 text-white transition-transform active:scale-90"
             >
