@@ -2,12 +2,12 @@
   import "../../app.css";
 
   import MobileNav from "$lib/components/MobileNav.svelte";
-  import Navbar from "$lib/components/Navbar.svelte";
+  import Header from "$lib/components/Header.svelte";
 
   let { children } = $props();
 </script>
 
-<Navbar />
+<Header />
 <main>
   {@render children()}
 </main>

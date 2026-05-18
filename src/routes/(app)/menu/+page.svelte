@@ -1,4 +1,5 @@
 <script>
+  import { addToCart } from "$lib/cart";
   const menu = [
     {
       name: "Cake",
@@ -110,6 +111,7 @@
             >
             <button
               class="transform rounded-full bg-[#C41E3A] p-3 text-white transition-transform active:scale-90"
+              onclick={() => addToCart(item)}
             >
               <span class="material-symbols-outlined">add_shopping_cart</span>
             </button>
