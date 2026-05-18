@@ -6,14 +6,22 @@
 <div class="py-20">
   {#each $cartStore as item}
     <div
-      class="rounded-3xl border border-white/5 bg-stone-950/50 p-8 transition-all hover:bg-[#C41E3A]/5"
+      class="rounded-3xl flex justify-between border border-white/5 bg-stone-950/50 p-4 transition-all hover:bg-[#C41E3A]/5"
     >
-      <h4
-        class="mb-2 text-2xl font-bold text-white"
-        style="font-family: 'Plus Jakarta Sans', sans-serif;"
-      >
-        {item.name}
-      </h4>
+      <img
+        src={item.imageUrl}
+        alt=""
+        class="w-20 h-22 rounded-3xl object-cover"
+      />
+      <div class="flex-1">
+        <h4
+          class="mb-2 text-2sm font-bold text-white"
+          style="font-family: 'Plus Jakarta Sans', sans-serif;"
+        >
+          {item.name}
+        </h4>
+        <p class="text-amber-500 font-bold">₦{item.price.toLocaleString()}</p>
+      </div>
       <button
         class="transform rounded-full bg-[#C41E3A] p-3 text-white transition-transform active:scale-90"
         onclick={() => removeItem(item)}
