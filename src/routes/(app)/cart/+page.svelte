@@ -1,14 +1,9 @@
 <script>
-  import { getCart, removeItem } from "$lib/cart";
-
-  let cartItems = $state([]);
-  $effect(() => {
-    cartItems = getCart();
-  });
+  import { getCart, saveCart, cartStore } from "$lib/cart";
 </script>
 
 <div class="py-20">
-  {#each cartItems as item}
+  {#each $cartStore as item}
     <div
       class="rounded-3xl border border-white/5 bg-stone-950/50 p-8 transition-all hover:bg-[#C41E3A]/5"
     >
@@ -20,7 +15,15 @@
       </h4>
       <button
         class="transform rounded-full bg-[#C41E3A] p-3 text-white transition-transform active:scale-90"
-        onclick={() => removeItem(item)}
+        onclick={() => {
+          const cart = $cartStore;
+          const updated = cart.filter((id) => {
+            console.log(id.name + " vs " + item.name);
+            return id.name !== item.name;
+          });
+          saveCart(updated);
+          return updated;
+        }}
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
