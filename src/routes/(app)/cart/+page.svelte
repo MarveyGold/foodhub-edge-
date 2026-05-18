@@ -1,5 +1,6 @@
 <script>
-  import { getCart, saveCart, cartStore } from "$lib/cart";
+  import { cartStore, syncCart, removeItem } from "$lib/cart";
+  $effect(() => syncCart());
 </script>
 
 <div class="py-20">
@@ -15,15 +16,7 @@
       </h4>
       <button
         class="transform rounded-full bg-[#C41E3A] p-3 text-white transition-transform active:scale-90"
-        onclick={() => {
-          const cart = $cartStore;
-          const updated = cart.filter((id) => {
-            console.log(id.name + " vs " + item.name);
-            return id.name !== item.name;
-          });
-          saveCart(updated);
-          return updated;
-        }}
+        onclick={() => removeItem(item)}
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"

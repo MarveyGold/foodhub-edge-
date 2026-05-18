@@ -10,13 +10,21 @@ export function saveCart(cart: any) {
   if (!browser) return;
   localStorage.setItem("cart", JSON.stringify(cart));
 }
+export function syncCart() {
+  cartStore.set(getCart())
+}
 export function addToCart(item: any) {
   const cart = getCart();
   cart.push(item);
   saveCart(cart)
 }
-export function removeItem(id: any) {
-  const cart = getCart();
-  const updated = cart.filter(item => { (item.imageUrl) !== id; console.log(item) });
-  saveCart(updated);
+export function removeItem(item: any) {
+  cartStore.update(cart => {
+    const updated = cart.filter((id) => {
+      console.log(id.name + " vs " + item.name);
+      return id.name !== item.name;
+    });
+    saveCart(updated);
+    return updated;
+  })
 }
