@@ -76,7 +76,7 @@
     {#each menu as item}
       <!-- content here -->
       <div
-        class="group overflow-hidden rounded-3xl border border-white/5 bg-stone-900/50 transition-all duration-300 md:hover:border-amber-500/30 md:col-span-2"
+        class="group overflow-hidden grid grid-rows-[auto_auto_1fr_auto] rounded-3xl border border-white/5 bg-stone-900/50 transition-all duration-300 md:hover:border-amber-500/30 md:col-span-2"
       >
         <div class="relative h-24 overflow-hidden">
           <img
@@ -113,7 +113,22 @@
               class="transform rounded-full bg-[#C41E3A] p-3 text-white transition-transform active:scale-90"
               onclick={() => addToCart(item)}
             >
-              <span class="material-symbols-outlined">add_shopping_cart</span>
+              <span class="material-symbols-outlined"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                  <path
+                    d="M17.31 14H9.72L5.95 2.68A1 1 0 0 0 5 2H2v2h2.28l3.54 10.63A2 2 0 0 0 9.72 16h7.59a2 2 0 0 0 1.87-1.3l2.76-7.35-1.87-.7zM10 18a2 2 0 1 0 0 4 2 2 0 1 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 1 0 0-4"
+                  ></path><path
+                    d="m11.71 7.29-1.42 1.42 2.71 2.7 4.71-4.7-1.42-1.42L13 8.59z"
+                  ></path>
+                </svg></span
+              >
             </button>
             <button
               class="material-symbols-outlined text-stone-400 hover:text-[#C41E3A]"
