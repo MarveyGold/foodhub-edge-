@@ -21,8 +21,8 @@ export function addToCart(item: any) {
 export function removeItem(item: any) {
   cartStore.update(cart => {
     const updated = cart.filter((id) => {
-      console.log(id.imageUrl + " vs " + item.imageUrl);
-      return id.imageUrl !== item.imageUrl;
+     // console.log(id.imageUrl + " vs " + item.imageUrl);
+      return id.id !== item.id;
     });
     saveCart(updated);
     return updated;

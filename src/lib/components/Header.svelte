@@ -6,12 +6,6 @@
       <a href="/">Hadeva Bakes </a>
     </h1>
 
-    <div class="flex items-center space-x-6">
-      <button
-        class="material-symbols-outlined text-white transition-all duration-300 hover:text-amber-400"
-      >
-        shopping_cart
-      </button>
-    </div>
+    <div class="flex items-center space-x-6"></div>
   </div>
 </nav>

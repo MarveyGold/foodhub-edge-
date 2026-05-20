@@ -124,8 +124,8 @@
               >₦{item.price.toLocaleString()}</span
             >
             <button
-              class="transform bg-[#C41E3A] h-12 w-12 text-white transition-transform active:scale-90"
-              onclick={() => addToCart(item)}
+              class=" flex justify-center items-center rounded-full transform bg-[#C41E3A] h-10 w-10 text-white transition-transform active:scale-90"
+              onclick={() => addToCart({ ...item, id: crypto.randomUUID() })}
             >
               <span class="material-symbols-outlined"
                 ><svg
