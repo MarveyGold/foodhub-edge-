@@ -1,5 +1,17 @@
 <script>
   import { addToCart } from "$lib/cart";
+  const flavourGroups = {
+    cake: [
+      "Vanilla",
+      "Chocolate",
+      "Red Velvet",
+      "Coconut",
+      "Carrot",
+      "Cookies & Cream",
+      "Strawberry",
+      "Banana",
+    ],
+  };
   const menu = [
     {
       name: "Cake",
@@ -14,6 +26,7 @@
       imageUrl: "/premium.png",
       description: "Premium Gold-plated cake available in any desired flavour",
       price: 150000,
+      flavourGroup: "cake",
     },
     {
       name: "Cake",
@@ -66,6 +79,7 @@
       description:
         "Rich moist military themed cake available in any desired flavour",
       price: 80000,
+      flavourGroup: "cake",
     },
   ];
 </script>
@@ -110,7 +124,7 @@
               >₦{item.price.toLocaleString()}</span
             >
             <button
-              class="transform rounded-full bg-[#C41E3A] p-3 text-white transition-transform active:scale-90"
+              class="transform bg-[#C41E3A] h-12 w-12 text-white transition-transform active:scale-90"
               onclick={() => addToCart(item)}
             >
               <span class="material-symbols-outlined"
