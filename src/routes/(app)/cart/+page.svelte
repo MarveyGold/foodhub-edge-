@@ -1,8 +1,30 @@
 <script>
   import { cartStore, syncCart, removeItem } from "$lib/cart";
   $effect(() => syncCart());
+  console.log($cartStore);
 </script>
 
+{#if $cartStore.length == 0}
+  <!-- content here -->
+
+  <section
+    id="cart"
+    class="py-20 px-6 h-[80vh] w-[95vw] flex flex-col items-center justify-between"
+  >
+    <h2>Cart Is Empty</h2>
+    <div>
+      <p>Oops! Looks like your cart is empty.</p>
+      <p>Check out the menu and add your favourite items to the cart</p>
+    </div>
+    <a href="/menu">
+      <button
+        class="transform rounded-xl border-2 border-amber-500 bg-transparent px-6 py-4 text-lg font-bold text-amber-500 transition-all hover:bg-amber-500/10 active:scale-95"
+      >
+        View Menu
+      </button>
+    </a>
+  </section>
+{/if}
 <div class="py-20">
   {#each $cartStore as item}
     <div
@@ -18,12 +40,12 @@
           class="mb-2 text-2sm font-bold text-white"
           style="font-family: 'Plus Jakarta Sans', sans-serif;"
         >
-          {item.name}
+          {item.name} ({item.flavour})
         </h4>
-        <p class="text-amber-500 font-bold">₦{item.price.toLocaleString()}</p>
+        <p class="text-amber-500 font-bold">₦{item.cost.toLocaleString()}</p>
       </div>
       <button
-        class="transform rounded-full bg-[#C41E3A] p-3 text-white transition-transform active:scale-90"
+        class="transform h-14 w-14 rounded-full bg-[#C41E3A] p-3 text-white transition-transform active:scale-90"
         onclick={() => removeItem(item)}
         ><svg
           xmlns="http://www.w3.org/2000/svg"
