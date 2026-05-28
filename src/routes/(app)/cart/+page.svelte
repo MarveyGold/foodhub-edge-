@@ -18,7 +18,7 @@
     </div>
     <a href="/menu">
       <button
-        class="transform rounded-xl border-2 border-amber-500 bg-transparent px-6 py-4 text-lg font-bold text-amber-500 transition-all hover:bg-amber-500/10 active:scale-95"
+        class="transform rounded-xl border-2 border-amber-500 bg-transparent px-6 py-4 text-lg font-bold text-amber-500 transition-all hover:bg-amber-500/10 active:scale-95 w-[80vw]"
       >
         View Menu
       </button>

@@ -13,10 +13,11 @@
     ],
   };
   let { data } = $props();
-  const menu = data.menu;
+  console.log(data.category)
   let flavour = $state("Vanilla");
   let quantity = $state(1);
   let item = $state();
+  
   let price = $derived(item?.price * quantity);
 </script>
 
@@ -108,15 +109,20 @@
           <div class="flex mt-1.5 items-center justify-center">
             <button
               class="  flex items-center justify-center rounded-2xl transform bg-[#C41E3A] h-10 w-[80vw] text-white transition-transform flavour:scale-90"
-              onclick={() => {
+              onclick={() => { item.category == "cake" ?
                 addToCart({
                   ...item,
                   id: crypto.randomUUID(),
                   flavour,
                   quantity,
                   cost: price,
-                });
-                item = 0;
+                }) :
+addToCart({
+                  ...item,
+                  id: crypto.randomUUID(),
+                  quantity,
+                  cost: price,
+                });                item = 0;
               }}
               ><span class="material-symbols-outlined"
                 ><svg
@@ -148,12 +154,26 @@
     </div>
   </div>
 {:else}
-  <div class="p-2 py-25">
+  <div class=" mt-20 w-[90vw] ml-[5vw] justify-between gap-2 flex ">
+       <a href="/menu"> <span
+          class="cursor-pointer  rounded-full border border-white/5 bg-stone-900 px-4 py-2 text-sm font-semibold tracking-wide hover:bg-stone-800"
+class:text-amber-500 ={!data.category } class:text-stone-400 ={data.category }          >All</span
+        > </a>
+ <a href="/menu?category=cake"><span
+          class="cursor-pointer  rounded-full border border-white/5 bg-stone-900 px-4 py-2 text-sm font-semibold tracking-wide hover:bg-stone-800"
+class:text-stone-400={data.category !== 'cake' } class:text-amber-500={data.category == 'cake' }  >Cakes</span
+        ></a>
+<a href="/menu?category=snacks"> <span
+          class="cursor-pointer  rounded-full border border-white/5 bg-stone-900 px-4 py-2 text-sm font-semibold tracking-wide hover:bg-stone-800"
+class:text-stone-400 ={data.category !== 'snacks' } class:text-amber-500={data.category == 'snacks' }    >Snacks</span
+        > </a>
+      </div>
+<div class="p-2 pb-18" >
     <div class="grid grid-cols-2 gap-1 md:grid-cols-12">
       <!-- Main Feature -->
-      {#each menu as menu}
+      {#each data.menu as menu}
         <div
-          class="group overflow-hidden grid grid-rows-[auto_auto_1fr_auto] rounded-3xl border border-white/5 bg-stone-900/50 transition-all duration-300 md:hover:border-amber-500/30 md:col-span-2"
+          class="group overflow-hidden grid grid-rows-[auto_auto_1fr_auto] rounded-3xl border border-white/5 bg-stone-900/50 transition-all duration-300 hover:border-amber-500/30 "
         >
           <div class="relative h-24 overflow-hidden">
             <img

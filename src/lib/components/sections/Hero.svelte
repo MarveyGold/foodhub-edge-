@@ -50,6 +50,7 @@
         </p>
         <div class="flex gap-4 pt-4">
           <button
+            onclick={() => goto("/cart")}
             class="transform rounded-xl bg-[#C41E3A] px-6 py-4 text-lg font-bold text-white shadow-xl shadow-[#C41E3A]/20 transition-all hover:bg-[#9e0027] active:scale-95"
           >
             Order Now
