@@ -10,4 +10,4 @@ const menuSchema = new Schema({
   category: String
 }, { timestamps: true });
 export type Menu = InferSchemaType<typeof menuSchema>;
-export const MenuModel = mongoose.models.Menu ?? mongoose.model('Menu', menuSchema);
+export const Menu = mongoose.models.Menu ?? mongoose.model('Menu', menuSchema);

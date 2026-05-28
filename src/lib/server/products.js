@@ -1,9 +1,9 @@
 
 import { connectDB } from "$lib/server/db"
-import { MenuModel } from "$lib/server/models/Menu"
+import { Menu } from "$lib/server/models/Menu"
 
 export async function getProducts(category) {
   await connectDB()
-  const menu = await MenuModel.find(category ? { category } : {}).lean()
+  const menu = await Menu.find(category ? { category } : {}).lean()
   return menu
 }
