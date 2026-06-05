@@ -38,7 +38,7 @@
           class="text-5xl leading-tight font-extrabold text-white md:text-7xl"
           style="font-family: 'Plus Jakarta Sans', sans-serif;"
         >
-          <span class="text-[#C41E3A]">Relishly Yours</span>
+          <span class="text-[#f54504]">Relishly Yours</span>
         </h1>
         <p
           class="max-w-lg text-lg leading-relaxed text-white/70"
@@ -51,7 +51,7 @@
         <div class="flex gap-4 pt-4">
           <button
             onclick={() => goto("/cart")}
-            class="transform rounded-xl bg-[#C41E3A] px-6 py-4 text-lg font-bold text-white shadow-xl shadow-[#C41E3A]/20 transition-all hover:bg-[#9e0027] active:scale-95"
+            class="transform rounded-xl bg-[#f54504] px-6 py-4 text-lg font-bold text-white shadow-xl shadow-[#f54504]/20 transition-all hover:bg-[#9e0027] active:scale-95"
           >
             Order Now
           </button>
@@ -67,7 +67,7 @@
       <div class="hidden md:block">
         <div class="group relative">
           <div
-            class="absolute -inset-4 rounded-[2rem] bg-[#C41E3A]/20 blur-2xl transition-all duration-500 group-hover:bg-amber-500/20"
+            class="absolute -inset-4 rounded-[2rem] bg-[#f54504]/20 blur-2xl transition-all duration-500 group-hover:bg-amber-500/20"
           ></div>
         </div>
       </div>

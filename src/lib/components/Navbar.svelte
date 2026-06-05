@@ -40,12 +40,22 @@
 </script>
 
 <nav
-  class="fixed top-0 z-50 w-full border-b border-white/10 bg-stone-950/90 shadow-xl backdrop-blur-md"
+  class="fixed top-0 z-50 w-full border-b border-white/10 bg-stone-950/90 shadow-xl backdrop-blur-md h-[10dvh]"
 >
-  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-    <h1 class="text-2xl font-black tracking-tighter text-[#C41E3A] italic">
-      <a href="/">Hadeva Bakes </a>
-    </h1>
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-2">
+    <div class="header-left">
+      <button class="icon-btn" aria-label="Go back">
+        <span class="material-symbols-outlined primary-icon"
+          ><img
+            src="/logo.png"
+            alt="Hadeva Bakes"
+            width="50"
+            height="50"
+          /></span
+        >
+      </button>
+      <h1 class="brand">Hadeva Bakes</h1>
+    </div>
 
     <div class="hidden items-center space-x-8 md:flex">
       {#each sections as section}
@@ -79,3 +89,42 @@
     </div>
   </div>
 </nav>
+
+<style>
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+
+  .brand {
+    font-family: var(--font-brand);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    transition: background 0.15s;
+    color: var(--color-on-surface-variant);
+  }
+
+  .icon-btn:hover {
+    background: color-mix(
+      in srgb,
+      var(--color-surface-variant) 40%,
+      transparent
+    );
+  }
+
+  .primary-icon {
+    color: var(--color-primary);
+  }
+</style>

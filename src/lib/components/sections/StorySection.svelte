@@ -9,7 +9,7 @@
       <div class="order-2 md:order-1">
         <div class="relative inline-block">
           <div
-            class="absolute -top-4 -left-4 h-24 w-24 border-t-2 border-l-2 border-[#C41E3A]"
+            class="absolute -top-4 -left-4 h-24 w-24 border-t-2 border-l-2 border-[#f54504]"
           ></div>
           <div
             class="absolute -right-4 -bottom-4 h-24 w-24 border-r-2 border-b-2 border-amber-500"
@@ -24,7 +24,7 @@
 
       <div class="order-1 space-y-6 md:order-2">
         <h2
-          class="text-3xl font-bold text-[#C41E3A]"
+          class="text-3xl font-bold text-[#f54504]"
           style="font-family: 'Plus Jakarta Sans', sans-serif;"
         >
           The Heart Behind The Bakes

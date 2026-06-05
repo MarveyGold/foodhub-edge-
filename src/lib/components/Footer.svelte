@@ -3,7 +3,7 @@
     class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-8 py-12 md:flex-row"
   >
     <div class="space-y-4">
-      <div class="text-lg font-bold text-[#C41E3A]">Hadeva Bakes</div>
+      <div class="text-lg font-bold text-[#f54504]">Hadeva Bakes</div>
       <p class="font-jakarta text-xs tracking-widest text-stone-500 uppercase">
         © 2026 Hadeva Bakes. Relishly Yours.
       </p>
